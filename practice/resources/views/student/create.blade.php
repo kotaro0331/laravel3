@@ -1,31 +1,26 @@
-<?php
-
 @extends('layouts.app')
 @section('content')
 
 <div class="row">
     <div class="col-md-10 mt-6">
         <div class="card-body">
-            <h1 class="mt4">管理ユーザー新規登録画面</h1>
+            <h1 class="mt4">学生登録画面</h1>
             <form enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="username">ユーザー名</label>
+                    <label for="username">名前</label>
                     <input type="text" name="username" class="form-control" id="username" placeholder="user name">
                 </div>
 
                 <div class="form-group">
-                    <label for="email address">メールアドレス</label>
-                    <input type="text" name="email address" class="form-control" id="email address" placeholder="email address">
+                    <label for="address">住所</label>
+                    <input type="text" name="address" class="form-control" id="address" placeholder="address">
                 </div>
 
                 <div class="form-group">
-                    <label for="password">パスワード</label>
-                    <input type="text" name="password" class="form-control" id="password" placeholder="password">
-                </div>
-
-                <div class="form-group">
-                    <label for="tpassword2">パスワード確認用</label>
-                    <input type="text" name="password2" class="form-control" id="password2" placeholder="For password confirmation">
+                    <label for="image">顔写真</label>
+                    <div class="col-md-6">
+                        <input id="image" type="file" name="image">
+                    </div>
                 </div>
                 
                 <button type="submit" class="btn btn-success">登録</button>
@@ -36,3 +31,4 @@
 </div>
 
 @endsection
+

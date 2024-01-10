@@ -23,4 +23,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/student', 'StudentController');
+Route::get('/student', function(){
+    return view('student');
+});
