@@ -10,25 +10,25 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="{{asset('css/style.css')}}"> 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!--@vite(['resources/css/app.css', 'resources/js/app.js']) -->
     </head>
     <body>
     <div class="wrapper">
 
     <div class="header">
-    <h1>Laraサイト</h1>
+    <h1>学生管理システム課題</h1>
     </div>
 
     <div class="sidebar">
-    <p>ここがサイドバー</p>
+    <p>サイドバー</p>
     </div>
 
     <div class="content">
-    <p>ここがコンテンツエリア</p>
+    <p>メインコンテンツ</p>
     </div>
 
     <div class="footer">
-    <p>お問い合わせ</p>
+
     </div>
 
             <!-- Page Content -->

@@ -41,14 +41,14 @@ hr{margin: 20px 0;}
 
 .wrapper{
     width: 1000px;
-    background-color: #20f3f3;
+    background-color: #b6c3d5;
     min-height:700px;
     /* border: 1px solid #ccc; */
     margin: 0 auto;
 }
 
 .header{
-    background-color: #707aff;
+    background-color: #4d8eb8;
     margin: 0 0 10 0px;
     height: 100px;
     padding: 20px;
@@ -57,10 +57,10 @@ hr{margin: 20px 0;}
 .sidebar{
     margin:20px;
     background-color: #ffffff;
-    border: 2px solid #707aff;
+    border: 2px solid #4d8eb8;
     border-radius: 10px;
     width: 250px;
-    min-height:500px;
+    min-height:200px;
     float: right;
     padding: 10px;
 }
@@ -68,16 +68,16 @@ hr{margin: 20px 0;}
 .content{
     text-align: center;
     width:690px;
-    min-height:500px;
+    min-height:200px;
     background-color: #ffffff;
-    border: 5px solid  #707aff;
+    border: 5px solid  #4d8eb8;
     border-radius: 10px;
     margin: 20px;
     padding: 10px;
 }
 
 .footer{
-    background-color: #707aff;
+    background-color: #4d8eb8;
     height: 80px;
     text-align: center;
     padding: 10px;

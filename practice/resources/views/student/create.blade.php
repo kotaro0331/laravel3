@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+<form method="student" action="{{route('student.store')}}" enctype="multipart/form-data">
+      @csrf
 <div class="row">
     <div class="col-md-10 mt-6">
         <div class="card-body">
