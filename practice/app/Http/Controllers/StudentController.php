@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\student;
+use App\Models\tudent;
 
 class StudentController extends Controller
 {
@@ -35,7 +35,12 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student=new Student();
+        $student->name=$request->name;
+        $student->address=$request->address;
+        $student->user_id=auth()->user()->id;
+        $student->save();
+        return back()->with('message','投稿を作成しました');
     }
 
     /**
