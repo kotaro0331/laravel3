@@ -8,10 +8,13 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id',
+        'grade',
         'name',
         'address',
-        'user_id',
+        'id',
         'img_path',
+        'comment'
     ];
 
 public function school_grades() {

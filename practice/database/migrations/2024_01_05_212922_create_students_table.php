@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->integer('id');
             $table->integer('grade');
             $table->string('name');
-            $table->string('addres');
+            $table->string('address');
             $table->string('img_path');
             $table->string('comment')->nullable();
             $table->timestamps();

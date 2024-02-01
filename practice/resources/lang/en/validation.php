@@ -158,6 +158,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'grade'=>'学年',
+        'name'=>'名前',
+        'address'=>'住所',
+        'img_path'=>'画像',
+        'comment'=>'コメント',
+    ],
 
 ];

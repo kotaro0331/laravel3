@@ -1,17 +1,20 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+@extends('layouts.app')
+@section('top')
+<div class="innertop">
+<h2 class="toph2">当サイトへようこそ</h2>
+<table style="border-collapse: collapse; width: 100%; height: 134px;">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 51px;"><span class="topbtn">新規登録</span></td>
+<td style="width: 33.3333%; height: 51px;"><span class="topbtn">学生表示</span></td>
+<td style="width: 33.3333%; height: 51px;"><span class="topbtn">特別プログラム</span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 33.3333%; height: 83px;"><span class="topbtn">ニュース</span></td>
+<td style="width: 33.3333%; height: 83px;"><span class="topbtn">総合</span></td>
+<td style="width: 33.3333%; height: 83px;"><span class="topbtn">Q&amp;A</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+@endsection

@@ -11,10 +11,13 @@
         <link rel="stylesheet" href="{{asset('css/style.css')}}"> 
         
          <!-- Styles -->
-         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+         <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
 
          <!-- Scripts -->
          <script src="{{ asset('js/app.js') }}" defer></script>
+
+         
     </head>
     <body>
     <div class="wrapper">
@@ -23,12 +26,12 @@
     <h1>学生管理システム課題</h1>
     </div>
 
-    <div class="sidebar">
-    <p>サイドバー</p>
+    <div class="sidebar"> 
+    @include('layouts.sidebar')
     </div>
 
     <div class="content">
-    <p>メインコンテンツ</p>
+    @include('layouts.top')
     </div>
 
     <div class="footer">
@@ -37,6 +40,7 @@
 
             <!-- Page Content -->
             <main class="py-4">
+              @yield('test')
               @yield('content')
             </main>
         </div>
