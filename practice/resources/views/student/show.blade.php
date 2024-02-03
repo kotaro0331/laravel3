@@ -1,23 +1,25 @@
 @extends('layouts.app')
 @section('content')
 
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 @foreach ($students as $student)
-<div class="container-fluid mt-20" style="margin:auto10px;">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <div class="media flex-wrap w-100 align-items-center">
-                            <div class="media-body ml-3"> <div class="media-body ml-3"> {{ $student->grade }} </div>
-                            <h4>{{ $student->grade }}</h4>
-                            <span class="ml-auto">
+    <div class="mx-4 sm:p-8">
+                <div class="mt-4">
+                    <div class="bg-white w-full  rounded-2xl px-10 py-8 shadow-lg hover:shadow-2xl transition duration-500">
+                        <div class="mt-4">
+                            <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer"> {{ $student->grade }}</h1>
+                            
                             <a href="{{route('student.edit', $student)}}"><x-button class="bg-teal-700 float-right">編集</x-button></a>
-                            </span>
-                            <div class="text-muted small"> <div class="text-muted small"> {{ $student->name }}</div>
-                            <div class="text-muted small"> <div class="text-muted small"> {{ $student->address }}</div>
-                    </div>
-                </div>
-                <div class="card-body">
+                            </h1><hr class="w-full">
+                            <hr class="w-full">
+                            <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer"> {{ $student->name }}</h1>
+                            <hr class="w-full">
+                            <h1 class="text-lg text-gray-700 font-semibold hover:underline cursor-pointer"> {{ $student->address }}</h1>
+                            <hr class="w-full">
+
+                            </div>
+                     <div class="card-body">
                     <p> <p>{{$student->comment}} </p> </p>
                     <div>
                     @if($student->img_path)
@@ -25,10 +27,10 @@
                     <img src="{{ asset('storage/images/'.$student->img_path)}}" 
                     class="img-fluid mx1-auto d-block" style="height:300px;">
                     @endif
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-</div>
-@endforeach
 @endsection

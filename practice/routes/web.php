@@ -32,6 +32,9 @@ Route::resource('/student', StudentController::class);
 
 Route::get('/student2', [StudentController::class,'show']);
 
+Route::get('/student/index2', [StudentController::class, 'index']);
+
+
 Route::resource('/grade', GradeController::class);
 
 Route::get('/grade2', [GradeController::class,'show']);

@@ -7,7 +7,8 @@
     class=''list-group-item {{url()->current()==route('student.create')? 'active' : ''}}"><span class="topbtn">学生登録</span></td>
 <td style="width: 33.3333%; height: 51px;"><a href="{{route('student.index')}}" 
     class=''list-group-item {{url()->current()==route('student.index')? 'active' : ''}}"><span class="topbtn">学生表示</span></td>
-<td style="width: 33.3333%; height: 51px;"><span class="topbtn">学生更新</span></td>
+<td style="width: 33.3333%; height: 51px;"><a href="{{route('student.index')}}" 
+    class=''list-group-item {{url()->current()==route('student.index')? 'active' : ''}}"><span class="topbtn">学生詳細</span></td>
 </tr>
 </tbody>
 </table>

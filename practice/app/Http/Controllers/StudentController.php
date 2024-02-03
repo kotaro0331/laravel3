@@ -17,14 +17,22 @@ class StudentController extends Controller
         // 
        }
 
-    public function index()
+    public function index(Request $request)
     {
        
         $students=Student::orderBy('created_at','desc')->get();
         $user=auth()->user();
         return view('student.index', compact('students', 'user'));
-            
-    }
+
+        $articles = Student::orderBy('created_at', 'asc')->where(function ($query) {
+
+            // 検索機能
+            if ($search = request('search')) {
+                $query->where('title', 'LIKE', "%{$search}%")->orWhere('tag1','LIKE',"%{$search}%")->orWhere('body','LIKE',"%{$search}%")
+                ;
+            }
+        });
+            }
     
 
     /**
