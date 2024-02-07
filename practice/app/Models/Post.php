@@ -8,8 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'grade',
+        'name',
+        'address',
+        'img_path',
+        'comment',
+    ];
 
-    public function user() {
-    return $this->belongsTo('App\Models\User');
+public function grades() {
+    return $this->hasMany('App\Models\Grade');
 }
 }
+

@@ -20,7 +20,7 @@
             @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
-            <form method="post" action="{{route('student.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
             @csrf
 
                 <div class="form-group">

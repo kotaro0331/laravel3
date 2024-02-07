@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GradeController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,8 +34,9 @@ Route::resource('/student', StudentController::class);
 
 Route::get('/student2', [StudentController::class,'show']);
 
-Route::get('/student/index2', [StudentController::class, 'index']);
+Route::resource('/post', PostController::class);
 
+Route::get('/post2', [PostController::class,'show']);
 
 Route::resource('/grade', GradeController::class);
 

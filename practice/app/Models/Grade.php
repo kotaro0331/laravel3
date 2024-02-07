@@ -9,6 +9,7 @@ class Grade extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'student_id',
         'grade',
         'term',
         'japanese',
@@ -22,4 +23,7 @@ class Grade extends Model
         'health_and_physical_education',
 
     ];
+
+    public function post() {
+        return $this->belongsTo('App\Models\Post');}
 }

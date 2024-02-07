@@ -21,33 +21,33 @@
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
             
-            <form method="post" action="{{route('student.update', $student)}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('post.update', $post)}}" enctype="multipart/form-data">
              @csrf
              @method('put')
                 <div class="form-group">
                     <label for="id">学生ID</label>
-                    <input type="text" name="id" class="form-control" id="id" value="{{old('id',$student->id)}}" placeholder="id">
+                    <input type="text" name="id" class="form-control" id="id" value="{{old('id',$post->id)}}" placeholder="id">
                 </div>
 
                 <div class="form-group">
                     <label for="grade">学年</label>
-                    <input type="text" name="grade" class="form-control" id="grade" value="{{old('grade',$student->grade)}}" placeholder="grade">
+                    <input type="text" name="grade" class="form-control" id="grade" value="{{old('grade',$post->grade)}}" placeholder="grade">
                 </div>
 
                 <div class="form-group">
                     <label for="name">名前</label>
-                    <input type="text" name="name" class="form-control" id="name" value="{{old('name',$student->name)}}" placeholder="name">
+                    <input type="text" name="name" class="form-control" id="name" value="{{old('name',$post->name)}}" placeholder="name">
                 </div>
                
                 <div class="form-group">
                     <label for="address">住所</label>
-                    <input type="text" name="address" class="form-control" id="address" value="{{old('address',$student->address)}}" placeholder="address">
+                    <input type="text" name="address" class="form-control" id="address" value="{{old('address',$post->address)}}" placeholder="address">
                 </div>
 
                 <div class="form-group">
-                    @if($student->img_path)
+                    @if($post->img_path)
                     </div>
-                    <img src="{{ asset('storage/images/'.$student->img_path)}}" 
+                    <img src="{{ asset('storage/images/'.$post->img_path)}}" 
                     class="img-fluid mx-auto d-block" style="height:200px;">
                     @endif
                     <label for="img_path">顔写真（1MBまで）</label>
@@ -58,7 +58,7 @@
 
                 <div class="form-group">
                     <label for="comment">コメント</label>
-                    <input type="text" name="comment" class="form-control" id="comment" value="{{old('comment',$student->comment)}}" placeholder="comment">
+                    <input type="text" name="comment" class="form-control" id="comment" value="{{old('comment',$post->comment)}}" placeholder="comment">
                 </div>
                 
                 <x-button type="submit" class="btn btn-success">編集</x-button>

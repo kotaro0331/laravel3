@@ -17,7 +17,7 @@ class Student extends Model
         'comment'
     ];
 
-public function school_grades() {
-    return $this->hasMany('App\Models\School_grade');
+public function grades() {
+    return $this->hasMany('App\Models\Grade');
 }
 }
