@@ -16,7 +16,7 @@ class Post extends Model
         'comment',
     ];
 
-public function grades() {
+public function grade() {
     return $this->hasMany('App\Models\Grade');
 }
 }

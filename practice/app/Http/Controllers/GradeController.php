@@ -20,7 +20,6 @@ class GradeController extends Controller
     public function index()
     {
         $grades=Grade::orderBy('created_at','desc')->get();
-        $post=auth()->post();
         return view('student.index2', compact('grades','post'));
     }
 
@@ -57,7 +56,6 @@ class GradeController extends Controller
         ]);
 
         $grade=new grade();
-        $grade->student_id=$request->student_id;
         $grade->grade = $request->grade;
         $grade->term = $request->term;
         $grade->japanese = $request->japanese;
@@ -82,8 +80,7 @@ class GradeController extends Controller
     public function show(Grade $grade)
     {
         $grades=Grade::orderBy('created_at','desc')->get();
-        $post=auth()->post();
-        return view('student.show2', compact('grades','post'));
+        return view('student.show2', compact('grades'));
     }
 
     /**
