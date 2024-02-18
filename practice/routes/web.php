@@ -36,6 +36,8 @@ Route::get('/student2', [StudentController::class,'show']);
 
 Route::resource('/post', PostController::class);
 
+Route::get('post/ajax', [PostController::class,'index']);
+
 Route::get('/post2', [PostController::class,'show']);
 
 Route::resource('/grade', GradeController::class);
