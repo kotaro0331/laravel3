@@ -6,11 +6,11 @@
       <tr><th>ID</th><th>学年</th><th>名前</th></tr>
   </thead>
   <tbody>
-  @foreach ($posts as $post)
+  @foreach ($students as $student)
     <tr>
-    <td>{{ $post->id }}</td>
-    <td>{{ $post->grade }}</td>
-    <td>{{ $post->name }}</td>
+    <td>{{ $student->id }}</td>
+    <td>{{ $student->grade }}</td>
+    <td>{{ $student->name }}</td>
     </tr>
 
     @endforeach

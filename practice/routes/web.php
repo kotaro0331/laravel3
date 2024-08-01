@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\GradeController;
-use App\Http\Controllers\PostController;
+use App\Http\ControlleStudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,13 +32,9 @@ require __DIR__.'/auth.php';
 
 Route::resource('/student', StudentController::class);
 
+Route::get('student/ajax', [StudentController::class,'index']);
+
 Route::get('/student2', [StudentController::class,'show']);
-
-Route::resource('/post', PostController::class);
-
-Route::get('post/ajax', [PostController::class,'index']);
-
-Route::get('/post2', [PostController::class,'show']);
 
 Route::resource('/grade', GradeController::class);
 

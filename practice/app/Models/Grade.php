@@ -24,6 +24,6 @@ class Grade extends Model
 
     ];
 
-    public function post() {
-        return $this->belongsTo('App\Models\Post','student_id');}
+    public function student() {
+        return $this->belongsTo('App\Models\Student','student_id');}
 }

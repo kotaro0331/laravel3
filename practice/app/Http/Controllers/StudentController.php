@@ -7,32 +7,22 @@ use App\Models\Student;
 
 class StudentController extends Controller
 {
-    protected $namespace = 'App\Http\Controllers';
-
-    public function postpage (Request $request){
-        return view ('student.create');
-       }
-       
-    public function savenew (Request $request){
-        // 
-       }
-
-    public function index(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(student $student)
     {
-       
-        $students=Student::orderBy('created_at','desc')->get();
+        $students=student::orderBy('created_at','desc')->get();
         $user=auth()->user();
-        return view('student.index', compact('students', 'user'));
-
-        $articles = Student::orderBy('created_at', 'asc')->where(function ($query) {
-
-            // 検索機能
-            if ($search = request('search')) {
-                $query->where('title', 'LIKE', "%{$search}%")->orWhere('tag1','LIKE',"%{$search}%")->orWhere('body','LIKE',"%{$search}%")
-                ;
-            }
-        });
-            }
+        return view('student.test',compact('students', 'user'),[
+            'student' => $student,
+        ]
+    
+    ); 
+    }
+    
     
 
     /**
@@ -80,9 +70,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(student $student)
     {
-        $students=Student::orderBy('created_at','desc')->get();
+        $students=student::orderBy('created_at','desc')->get();
         $user=auth()->user();
         return view('student.show', compact('students', 'user'));
     }
@@ -93,7 +83,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(student $student)
     {
         return view('student.edit', compact('student'));
     }
@@ -105,7 +95,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, student $student)
     {
         $inputs=$request->validate([
             'id'=>'required|max:255',
@@ -133,14 +123,4 @@ class StudentController extends Controller
         return back()->with('message','投稿を更新しました');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

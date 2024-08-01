@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,16 +9,20 @@ class Student extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id',
         'grade',
         'name',
         'address',
-        'id',
         'img_path',
-        'comment'
+        'comment',
     ];
 
-public function grades() {
-    return $this->hasMany('App\Models\Grade');
-}
+    public function studentAll(){
+        $student = Student();
+        $result = $student->getAll();
+        return  view('student_view',['student_result' => $result]);
+    }
+    
+    public function grade() {
+        return $this->hasMany('App\Models\Grade');
+    }
 }
