@@ -16,13 +16,12 @@ class StudentController extends Controller
     {
         $students=student::orderBy('created_at','desc')->get();
         $user=auth()->user();
-        return view('student.test',compact('students', 'user'),[
+        return view('student.DataTable',compact('students', 'user'),[
             'student' => $student,
         ]
     
     ); 
     }
-    
     
 
     /**
@@ -47,6 +46,11 @@ class StudentController extends Controller
             'name'=>'required|max:255',
             'address'=>'required|max:255',
             'img_path'=>'image|max:1024',
+        ],
+
+        [
+            'name.required' => '名前は必須です。',
+            'body.required' => 'bodyは必須項目です。'
         ]);
 
         $student=new Student();
