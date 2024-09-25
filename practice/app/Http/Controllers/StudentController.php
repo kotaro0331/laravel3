@@ -45,12 +45,12 @@ class StudentController extends Controller
         $inputs=$request->validate([
             'name'=>'required|max:255',
             'address'=>'required|max:255',
-            'img_path'=>'image|max:1024',
+            'img_path'=>'img_path|max:1024',
         ],
 
         [
             'name.required' => '名前は必須です。',
-            'body.required' => 'bodyは必須項目です。'
+            'address.required' => '住所は必須項目です。'
         ]);
 
         $student=new Student();
@@ -65,7 +65,7 @@ class StudentController extends Controller
         }
 
         $student->save();
-        return back()->with('message','投稿を作成しました');
+        return redirect()->route('student.create')->with('message','投稿を作成しました');
     }
 
     /**
@@ -106,7 +106,7 @@ class StudentController extends Controller
             'grade'=>'required|max:255',
             'name'=>'required|max:255',
             'address'=>'required|max:255',
-            'img_path'=>'image|max:1024',
+            'img_path'=>'img_path|max:1024',
             'comment'=>'required|max:255'
         ]);
         
@@ -119,7 +119,7 @@ class StudentController extends Controller
         if (request('img_path')){
             $original = request()->file('img_path')->getClientOriginalName();
             $name = date('Ymd_His').'_'.$original;
-            $file=request()->file('img_path')->move('storage/images', $name);
+            $file=request()->file('img_path')->move('storage/img_paths', $name);
             $student->img_path = $name;
         }
 

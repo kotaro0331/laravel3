@@ -11,7 +11,7 @@
             @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
             @endforeach
-            @if(empty($errors->first('image')))
+            @if(empty($errors->first('	img_path')))
             <li>画像ファイルがあれば、再度、選択してください。</li>
             @endif
            </ul>
@@ -20,7 +20,7 @@
             @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
-            <form method="student" action="{{route('student.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('student.store')}}" enctype="multipart/form-data">
             @csrf
 
                 <div class="form-group">
@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label for="img_path">顔写真（1MBまで）</label>
                     <div class="col-md-6">
-                        <input id="img_path" type="file" name="img_path">
+                    <input id="img_path" type="file" name="img_path">
                     </div>
                 </div>
                 

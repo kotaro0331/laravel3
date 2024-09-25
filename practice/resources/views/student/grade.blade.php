@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-10 mt-6">
         <div class="card-body">
-        <h1 class="mt4">成績登録</h1>
+        <h1 class="mt-4">成績登録</h1>
           @if ($errors->any())
           <div class="alert alert-danger">
           <ul>
